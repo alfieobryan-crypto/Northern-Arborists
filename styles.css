@@ -197,13 +197,13 @@ p:last-child { margin-bottom: 0; }
 }
 
 .btn-primary {
-  background-color: var(--brand-brown);
+  background-color: var(--green-500);
   color: var(--white);
-  border-color: var(--brand-brown);
+  border-color: var(--green-500);
 }
 .btn-primary:hover {
-  background-color: var(--brown-700);
-  border-color: var(--brown-700);
+  background-color: var(--green-600);
+  border-color: var(--green-600);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -492,7 +492,9 @@ p:last-child { margin-bottom: 0; }
    9. STATS STRIP
    ============================================================ */
 .stats-strip {
-  background-color: #4A3820;
+  background-color: var(--green-800);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   padding: 1.5rem 0;
 }
 .stats-inner {
@@ -1022,7 +1024,7 @@ label {
   margin-bottom: 0.4rem;
   letter-spacing: 0.02em;
 }
-label .req { color: var(--brand-brown); margin-left: 2px; }
+label .req { color: var(--green-500); margin-left: 2px; }
 
 input, textarea, select {
   width: 100%;
