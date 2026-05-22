@@ -9,6 +9,13 @@
   const hamburger = document.getElementById('navHamburger');
   const mobileNav = document.getElementById('navMobile');
 
+  /* Position the mobile drawer flush below the header (accounts for emergency bar) */
+  const positionMobileNav = () => {
+    if (header) {
+      mobileNav.style.top = header.getBoundingClientRect().bottom + 'px';
+    }
+  };
+
   if (hamburger && mobileNav) {
     hamburger.addEventListener('click', () => {
       const isOpen = hamburger.classList.toggle('open');
@@ -16,6 +23,7 @@
       hamburger.setAttribute('aria-expanded', String(isOpen));
       mobileNav.setAttribute('aria-hidden', String(!isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
+      if (isOpen) positionMobileNav();
     });
 
     document.addEventListener('click', (e) => {

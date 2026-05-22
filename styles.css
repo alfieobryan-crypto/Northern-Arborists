@@ -106,6 +106,7 @@ body {
   color: var(--text-dark);
   background-color: var(--cream-50);
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img  { max-width: 100%; height: auto; display: block; }
@@ -1185,7 +1186,7 @@ textarea { resize: vertical; min-height: 130px; }
    20. EMERGENCY BANNER
    ============================================================ */
 .emergency-bar {
-  background-color: #B84C1B;
+  background-color: #252C20;
   padding: 0.55rem 0;
   text-align: center;
 }
@@ -1216,4 +1217,114 @@ textarea { resize: vertical; min-height: 130px; }
   clip: rect(0,0,0,0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* ============================================================
+   22. TOUCH & TAP TARGETS
+   ============================================================ */
+.btn         { min-height: 44px; }
+.nav-hamburger { min-width: 44px; min-height: 44px; }
+.nav-links a { min-height: 44px; display: flex; align-items: center; }
+.nav-mobile a { min-height: 48px; display: flex; align-items: center; }
+
+/* Prevent iOS Safari from zooming on input focus (font-size < 16px triggers zoom) */
+input, textarea, select { font-size: max(16px, var(--text-base)); }
+
+/* ============================================================
+   23. MOBILE OVERRIDES  (max-width: 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* Section spacing — tighter on small screens */
+  .section     { padding: 3rem 0; }
+  .section--lg { padding: 4rem 0; }
+  .section--sm { padding: 2rem 0; }
+
+  /* Hero */
+  .hero-home {
+    padding: 2rem 0 3rem;
+    min-height: calc(100svh - var(--nav-height) - 34px); /* account for emergency bar */
+    align-items: flex-start;
+    padding-top: 2.5rem;
+  }
+  .hero-home h1 { font-size: clamp(2.1rem, 9vw, 3rem); }
+  .hero-subtitle { font-size: var(--text-base); margin-bottom: 2rem; }
+  .hero-actions { flex-direction: column; gap: 0.75rem; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-trust { gap: 0.65rem 1.25rem; padding-top: 1.5rem; }
+  .hero-badge { font-size: 0.7rem; padding: 0.35rem 0.75rem; }
+
+  /* Inner page hero */
+  .page-hero { padding: 2.5rem 0 2rem; }
+  .page-hero h1 { font-size: var(--text-3xl); }
+  .page-hero .lead { font-size: var(--text-base); }
+
+  /* Stats — 2×2 grid instead of cramped flex row */
+  .stats-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 1.5rem;
+    padding: 0.5rem 0;
+  }
+  .stats-divider { display: none !important; }
+  .stat-number   { font-size: var(--text-3xl); }
+  .stat-label    { font-size: var(--text-xs); }
+
+  /* Service cards */
+  .service-card { padding: 1.5rem; }
+  .services-overview-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* Service detail pages */
+  .service-detail { padding: 2.5rem 0; }
+  .service-img-placeholder { aspect-ratio: 16/9; } /* shorter on mobile */
+
+  /* Trust grid — stays 2-col but tighter */
+  .trust-grid { gap: 1.5rem 1rem; }
+  .trust-icon { width: 52px; height: 52px; }
+
+  /* About strip (home) */
+  .about-strip-inner { gap: 2rem; }
+  .about-photo-placeholder {
+    aspect-ratio: 3/2; /* landscape crop on mobile — shorter */
+    max-height: 280px;
+  }
+
+  /* About page */
+  .about-photo-lg {
+    aspect-ratio: 4/3;
+    max-height: 320px;
+  }
+  .about-text blockquote {
+    font-size: var(--text-lg);
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  /* Values grid */
+  .value-card { padding: 1.5rem; }
+
+  /* Gallery */
+  .gallery-item.featured { grid-column: span 1; aspect-ratio: 4/3; }
+
+  /* CTA banner */
+  .cta-banner { padding: 3rem 0; }
+  .cta-banner h2 { font-size: var(--text-2xl); }
+  .cta-actions { flex-direction: column; align-items: center; gap: 0.75rem; }
+
+  /* Contact */
+  .contact-form-wrap { padding: 1.5rem; }
+  .contact-info-card { padding: 1.25rem; }
+
+  /* Footer */
+  .site-footer { padding: 3rem 0 1.25rem; }
+  .footer-grid { gap: 2rem; margin-bottom: 2rem; }
+
+  /* Headings scale down slightly */
+  h2 { font-size: clamp(var(--text-xl), 5vw, var(--text-3xl)); }
+
+  /* Emergency bar — ensure text wraps gracefully */
+  .emergency-bar p {
+    font-size: 0.75rem;
+    gap: 0.35rem;
+    padding: 0 0.5rem;
+  }
 }
