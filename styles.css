@@ -658,6 +658,15 @@ p:last-child { margin-bottom: 0; }
   opacity: 0.7;
 }
 
+.about-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: inherit;
+  display: block;
+}
+
 .about-strip-text { order: 1; }
 @media (min-width: 768px) { .about-strip-text { order: 2; } }
 .about-strip-text .section-label { color: var(--green-300); }
