@@ -492,7 +492,7 @@ p:last-child { margin-bottom: 0; }
    9. STATS STRIP
    ============================================================ */
 .stats-strip {
-  background-color: var(--brand-brown);
+  background-color: #4A3820;
   padding: 1.5rem 0;
 }
 .stats-inner {
@@ -668,8 +668,8 @@ p:last-child { margin-bottom: 0; }
    13. CTA BANNER
    ============================================================ */
 .cta-banner {
-  background-color: var(--brown-700);
-  background-image: linear-gradient(135deg, var(--brown-700) 0%, var(--brown-800) 100%);
+  background-color: #2C2E26;
+  background-image: linear-gradient(135deg, #333527 0%, #1E2019 100%);
   color: var(--white);
   text-align: center;
   padding: 5rem 0;
